@@ -1,0 +1,205 @@
+:root {
+    --turquoise: #2EC4B6; /*The top 4 are the old colours*/
+    --light-blue: #CBF3F0;
+    --mustard: #FF9F1C;
+    --cream: #FFBF69;
+    --periwinkle: #bcb6ff;
+    --uranian-blue: #b8e1ff;
+    --ice-blue: #a9fff7;
+    --light-green: #94fbab;
+    --sea-green: #388659;
+  }
+
+body {background-color: white;}
+
+#background {
+    height: 100vh; 
+    background: linear-gradient(45deg, var(--ice-blue) 0%, var(--uranian-blue) 50%, var(--periwinkle) 100%);
+}
+
+#popup, #main, #button {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48vw;
+}
+
+#popup {top: 50%;}
+
+#main {
+    top: 45%;
+    height: 20vh;
+}
+
+#button {top: 25%;}
+
+.open {
+    visibility: visible;
+    animation: fadeIn 1s;
+}
+
+.closed {visibility: hidden;}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#createTask {
+    width: 100px;
+    height:60px;
+    text-align: center;
+    border-radius: 5px;
+    border-style: none;
+    background-color: var(--periwinkle);
+    color: black;
+    font-weight: bold;
+    margin: 20px;
+}
+
+#closePopup {
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    background-color: var(--light-green);
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+#closePopup:hover {background-color: var(--sea-green);}
+
+#formContainer {
+    background-color: var(--sea-green);
+    border-radius: 5px;
+    width: 30vw;
+    height: 60vh;
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#eventColour, #eventEndDate, #eventPriority, #eventDetails, #popupButtonContainer {
+    flex: 1 1 60%;
+    margin: 10px;
+    background-color: var(--light-green);
+}
+
+#eventColour, #eventEndDate, #eventPriority, #eventDetails, #popupButtonContainer, #submitTask, #updateTask {
+    text-align: center;
+    border-radius: 5px;
+    border-style: none;
+    color: black;
+    font-weight: bold;
+}
+
+#eventColour {
+    height: 10vh;
+    padding: 20px;
+}
+
+#eventEndDate, #eventPriority, #popupButtonContainer, #submitTask, #updateTask {
+    height: 5vh;
+    width: 10vw;
+}
+
+#eventDetails {
+    resize: none;
+    width: 10vw;
+}
+
+#createTask:hover, #submitTask:hover, #updateTask:hover {color: white;}
+
+#popupButtonContainer {position: relative;}
+
+#submitTask, #updateTask {
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.editing, .creating {visibility: hidden;}
+
+#taskContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    position: relative;
+    overflow-y: scroll;
+    margin: 10px;
+}
+
+#taskContainer, #buttonContainer {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#events {
+    display: block;
+    table-layout: auto;
+    border-radius: 5px;
+    border-style: none;
+    color: black;
+    border-collapse: collapse;
+}
+
+#events thead {background-color: var(--periwinkle);}
+
+#events tr:nth-child(even) {background-color: var(--uranian-blue);}
+
+#events tr:hover {background-color: var(--periwinkle);}
+
+#events th {text-align: center;}
+
+#events th, #events td {
+    border: 1px solid var(--uranian-blue);
+    padding: 10px;
+}
+
+.details {word-break: break-all;}
+
+.Low {color: green;}
+
+.Medium {color: orange;}
+
+.High {color: red;}
+
+.deleteBtn, .editBtn {
+    width:30px;
+    height: 30px;
+    border-style: none;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.deleteBtn:hover, .editBtn:hover {background-color: var(--light-blue);}
+
+#sortByContainer {
+    display: block;
+    position: sticky;
+    top:0;
+    background-color: white;
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+}
+
+#sortByLabel {
+    font-weight: bold;
+    margin: 5px;
+    text-align: center;
+}
+
+#sortBy {
+    background-color: var(--uranian-blue);
+    border-style: none;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 5px;
+}
